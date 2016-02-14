@@ -4,8 +4,8 @@
 
 **可以做什么**
 - 自动输出sketch中的画板并用浏览器预览，修改sketch文件后可以自动刷新页面
-- 快速输出slices
-- 
+- 自动输出slices
+- 自动编译less
 
 ## Install
 ### 依赖工具
