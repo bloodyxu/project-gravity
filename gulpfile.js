@@ -3,37 +3,37 @@ var sketch = require('gulp-sketch');
 var server = require('gulp-server-livereload');
 var less = require('gulp-less');
 
+//------gulp design-------------------------------------------------------
 //监视sketch源文件的改动
 gulp.task('auto', function() {
-    gulp.watch('src/*.sketch', ['sketch', 'export_slices'])
+    gulp.watch('sketch-doc/*.sketch', ['export_artboards', 'export_slices'])
 })
 
 //导出指定画板为@2x PNG文件
 gulp.task('export_artboards', function(){
-  return gulp.src('./src/*.sketch') //监视src目录下所有sketch文件
+  return gulp.src('./sketch-doc/*.sketch') //监视src目录下所有sketch文件
     .pipe(sketch({
       export: 'artboards', //导出类型为artboard
       //items: 'home', //导出的artboard名称
       formats: 'png', //导出的格式
       scales: '1.0, 2.0' //导出@2x尺寸：需要在sketch中设定好输出尺寸
     }))
-    .pipe(gulp.dest('./Artboards/')); //将导出的png文件放在dist/images/目录下
+    .pipe(gulp.dest('./preview/artboards/')); //将导出的png文件放在dist/images/目录下
 });
 
 
 //创建web服务器和livereload
 gulp.task('design_server', function() {
-  gulp.src('dist') //监视路径
+  gulp.src('preview') //监视路径
     .pipe(server({
-        defaultFile: 'index.html', //设定默认文件为index.html
+        //defaultFile: 'index.html', //设定默认文件为index.html
         livereload: true,
         directoryListing: true,
         open: true
     }));
 });
 
-
-
+//------gulp dev-------------------------------------------------------
 //编译less文件
 gulp.task('less', function () {
     return gulp.src('./src/styles/*.less')
@@ -48,7 +48,7 @@ gulp.task('watch_less', function() {
 
 //导出sketch中已经定义好的资源
 gulp.task('export_slices', function() {
-    return gulp.src('./src/*.sketch')
+    return gulp.src('./sketch-doc/*.sketch')
         .pipe(sketch({
             export: 'slices',
             formats: 'png',
