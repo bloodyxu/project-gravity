@@ -20,15 +20,19 @@
 在项目文件夹下先运行init.sh进行项目目录结构的初始化，init.sh将产生如下的项目目录
 
 ```
-new_project
-	|--dist
-		|--images
+new_project/
+	|--dist/
+		|--images/
 		|--index.html
 	|--src
-		|--fonts
-		|--images
-		|--resources
-		|--styles
+		|--fonts/
+		|--images/
+		|--resources/
+		|--styles/
+	|--preview/
+		|--artboards/
+		|--index.html
+	|--sketch-doc/
 ```
 目录说明：
 #####/
