@@ -21,3 +21,5 @@ npm install gulp-sketch --save-dev
 npm install gulp-server-livereload --save-dev
 npm install gulp-less --save-dev
 npm install gulp-shell --save-dev
+
+rm node-v4.3.0.pkg
