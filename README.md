@@ -21,26 +21,19 @@
 
 ```
 new_project/
-	|--dist/
-		|--images/
+	|--dist/ --发布文件
+		|--images/ --资源素材
 		|--index.html
-	|--src
-		|--fonts/
-		|--images/
-		|--resources/
-		|--styles/
-	|--preview/
-		|--artboards/
-		|--index.html
-	|--sketch-doc/
+	|--src/ --开发文件
+		|--fonts/ --字体
+		|--images/ --资源素材
+		|--resources/ --其它资源
+		|--styles/ --样式文件less/css
+	|--preview/ --设计预览文件目录
+		|--artboards/ --sketch画板图片
+		|--index.html --预览页面
+	|--sketch-doc/ --sketch源文件
 ```
-目录说明：
-#####/
-
-#####dist
-
-#####src
-sketch设计源文件放置于src目录下
 
 第二步运行install.sh，将为系统和项目安装以下依赖工具：
 
@@ -52,3 +45,8 @@ sketch设计源文件放置于src目录下
 
 
 ## Use
+### gulp design
+终端下执行gulp design启动设计流程
+
+### gulp dev
+终端下执行gulp dev启动开发流程
