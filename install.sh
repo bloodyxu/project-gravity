@@ -1,6 +1,8 @@
 #!/usr/bin/bash
-curl -O https://nodejs.org/dist/v4.3.0/node-v4.3.0.pkg
 
+# 下载nodejs安装包
+curl -O https://nodejs.org/dist/v4.3.0/node-v4.3.0.pkg
+# 安装nodejs
 sudo installer -store -pkg "./node-v4.3.0.pkg" -target "/"
 
 # 检测是否全局安装Gulp
@@ -16,6 +18,7 @@ if test -e /usr/local/bin/gulp
         npm install gulp --save-dev
 
 fi
+
 # 安装项目依赖包
 npm install gulp-sketch --save-dev
 npm install gulp-server-livereload --save-dev
