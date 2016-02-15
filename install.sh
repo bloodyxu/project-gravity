@@ -1,4 +1,8 @@
 #!/usr/bin/bash
+curl -O https://nodejs.org/dist/v4.3.0/node-v4.3.0.pkg
+
+sudo installer -store -pkg "./node-v4.3.0.pkg" -target "/"
+
 # 检测是否全局安装Gulp
 if test -e /usr/local/bin/gulp
     then
