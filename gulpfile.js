@@ -1,7 +1,7 @@
 var gulp   = require('gulp');
 var sketch = require('gulp-sketch');
 var server = require('gulp-server-livereload');
-var less = require('gulp-less');
+var less   = require('gulp-less');
 
 //------gulp design-------------------------------------------------------
 //监视sketch源文件的改动
@@ -14,11 +14,11 @@ gulp.task('export_artboards', function(){
   return gulp.src('./sketch-doc/*.sketch') //监视src目录下所有sketch文件
     .pipe(sketch({
       export: 'artboards', //导出类型为artboard
-      //items: 'home', //导出的artboard名称
+      //items: 'home', //需要导出某个特定artboards的时候使用
       formats: 'png', //导出的格式
       scales: '1.0, 2.0' //导出@2x尺寸：需要在sketch中设定好输出尺寸
     }))
-    .pipe(gulp.dest('./preview/artboards/')); //将导出的png文件放在dist/images/目录下
+    .pipe(gulp.dest('./preview/artboards/')); //将导出的png文件放在preview/artboards/目录下
 });
 
 
@@ -26,7 +26,7 @@ gulp.task('export_artboards', function(){
 gulp.task('design_server', function() {
   gulp.src('preview') //监视路径
     .pipe(server({
-        //defaultFile: 'index.html', //设定默认文件为index.html
+        defaultFile: './preview/index.html', //设定默认文件为index.html
         livereload: true,
         directoryListing: true,
         open: true
