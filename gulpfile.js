@@ -90,4 +90,4 @@ gulp.task('dev_server', function() {
 gulp.task('design', ['export_artboards', 'design_server']);
 
 //执行gulp dev开始开发任务
-gulp.task('dev', ['export_slices','less', 'watch_less', 'dev_server']);
+gulp.task('dev', ['export_slices', 'less', 'watch_less', 'dev_server']);
