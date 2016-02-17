@@ -1,6 +1,7 @@
 var gulp   = require('gulp');
 var sketch = require('gulp-sketch');
 var server = require('gulp-server-livereload');
+var filelist = require('gulp-filelist');
 var less = require('gulp-less');
 
 //监视sketch源文件的改动
@@ -27,7 +28,7 @@ gulp.task('design_server', function() {
     .pipe(server({
         defaultFile: 'index.html', //设定默认文件为index.html
         livereload: true,
-        directoryListing: true,
+        directoryListing: false,
         open: true
     }));
 });
@@ -54,6 +55,7 @@ gulp.task('export_slices', function() {
             formats: 'png',
             scales: '1.0, 2.0'
         }))
+        .pipe(filelist('list.json',{flatten:true}))
         .pipe(gulp.dest('./src/images/'));
 })
 

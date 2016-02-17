@@ -9,6 +9,6 @@ mkdir src/resources
 
 mkdir dist
 mkdir dist/images
-touch dist/index.html
+cp "./template.html" "./dist/"
 
 echo '项目结构建立完成'
