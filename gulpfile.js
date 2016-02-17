@@ -1,6 +1,15 @@
 var gulp   = require('gulp');
 var sketch = require('gulp-sketch');
 var server = require('gulp-server-livereload');
+<<<<<<< HEAD
+var filelist = require('gulp-filelist');
+var less = require('gulp-less');
+
+//监视sketch源文件的改动
+gulp.task('auto', function() {
+    gulp.watch('src/*.sketch', ['export_artboards', 'export_slices'])
+})
+=======
 var less   = require('gulp-less');
 
 //---------------------------------------------------------------------
@@ -14,6 +23,7 @@ var less   = require('gulp-less');
 //    gulp.watch('sketch-doc/*.sketch', ['export_artboards'])
 //})
 
+>>>>>>> bloodyxu/master
 
 //导出指定画板为@2x PNG文件
 gulp.task('export_artboards', function(){
@@ -33,7 +43,11 @@ gulp.task('design_server', function() {
     .pipe(server({
         defaultFile: 'index.html', //设定默认文件为index.html
         livereload: true,
+<<<<<<< HEAD
+        directoryListing: false,
+=======
         //directoryListing: true, //目录列表如果开启，则defaultFile选项失效
+>>>>>>> bloodyxu/master
         open: true
     }));
 });
@@ -55,10 +69,11 @@ gulp.task('design_server', function() {
 gulp.task('export_slices', function() {
     return gulp.src('./sketch-doc/*.sketch')
         .pipe(sketch({
-            export: 'slices',
+            export: 'artboards',
             formats: 'png',
-            scales: '1.0, 2.0'
+            scales: '2.0'// 可选生成1倍或2倍图（1.0、2.0）
         }))
+        .pipe(filelist('list.json',{flatten:true}))
         .pipe(gulp.dest('./src/images/'));
 })
 
@@ -80,8 +95,13 @@ gulp.task('dev_server', function() {
     .pipe(server({
         defaultFile: 'index.html', //设定默认文件为index.html
         livereload: true,
+<<<<<<< HEAD
+        directoryListing: false,
+        //open: true,
+=======
         //directoryListing: true,  //开发模式下默认不打开目录列表
         //open: true, //开发模式下默认不开启浏览器
+>>>>>>> bloodyxu/master
     }));
 });
 
