@@ -6,7 +6,7 @@ var less = require('gulp-less');
 
 //监视sketch源文件的改动
 gulp.task('auto', function() {
-    gulp.watch('src/*.sketch', ['sketch', 'export_slices'])
+    gulp.watch('src/*.sketch', ['export_artboards', 'export_slices'])
 })
 
 //导出指定画板为@2x PNG文件
@@ -51,9 +51,9 @@ gulp.task('watch_less', function() {
 gulp.task('export_slices', function() {
     return gulp.src('./src/*.sketch')
         .pipe(sketch({
-            export: 'slices',
+            export: 'artboards',
             formats: 'png',
-            scales: '1.0, 2.0'
+            scales: '2.0'// 可选生成1倍或2倍图（1.0、2.0）
         }))
         .pipe(filelist('list.json',{flatten:true}))
         .pipe(gulp.dest('./src/images/'));
@@ -63,9 +63,9 @@ gulp.task('export_slices', function() {
 gulp.task('dev_server', function() {
   gulp.src('src') //监视路径
     .pipe(server({
-        defaultFile: 'home.html', //设定默认文件为index.html
+        defaultFile: 'index.html', //设定默认文件为index.html
         livereload: true,
-        directoryListing: true,
+        directoryListing: false,
         //open: true,
     }));
 });
