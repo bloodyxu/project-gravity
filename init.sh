@@ -11,6 +11,9 @@ mkdir dist
 mkdir dist/images
 touch dist/index.html
 
-cp "./index.html" "./dist"
+mkdir sketch-doc
+mkdir preview
+
+cp "./index.html" "./preview"
 
 echo '项目结构建立完成'

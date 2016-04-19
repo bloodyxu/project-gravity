@@ -10,24 +10,22 @@ if test -e /usr/local/bin/gulp
         # 安装全局的Gulp
         sudo npm install gulp --global
         sudo npm install gulp --save-dev
-
 fi
 
 
-
-cp "./sketchtool/bin/sketchmigrate" /usr/local/bin/
-echo Installed `"./sketchtool/bin/sketchmigrate" --version` in "/usr/local/bin"
-
-cp "./sketchtool/bin/sketchtool" /usr/local/bin/
-mkdir -p /usr/local/share/sketchtool
-cp -r "./sketchtool/share/sketchtool/resources.bundle" /usr/local/share/sketchtool/
-echo Installed `"./sketchtool/bin/sketchtool" --version` in "/usr/local/bin"
+# 复制sketchtool到/usr/local/bin/
+# cp "./sketchtool/bin/sketchmigrate" /usr/local/bin/
+# echo Installed `"./sketchtool/bin/sketchmigrate" --version` in "/usr/local/bin"
+# 
+# cp "./sketchtool/bin/sketchtool" /usr/local/bin/
+# mkdir -p /usr/local/share/sketchtool
+# cp -r "./sketchtool/share/sketchtool/resources.bundle" /usr/local/share/sketchtool/
+# echo Installed `"./sketchtool/bin/sketchtool" --version` in "/usr/local/bin"
 
 
 # 安装项目依赖包
-npm install gulp-sketch --save-dev
-npm install gulp-server-livereload --save-dev
-npm install gulp-less --save-dev
-npm install gulp-shell --save-dev
-
-npm install gulp-filelist
+sudo npm install gulp-sketch --save-dev
+sudo npm install gulp-server-livereload --save-dev
+sudo npm install gulp-less --save-dev
+sudo npm install gulp-shell --save-dev
+sudo npm install gulp-filelist
