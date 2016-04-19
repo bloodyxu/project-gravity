@@ -3,9 +3,8 @@
 **帮助设计师提升设计与生产效率**
 
 **可以做什么**
-- 自动输出sketch中的画板并用浏览器预览，修改sketch文件后可以自动刷新页面
-- 自动输出slices
-- 自动编译less
+- 由于Sketch内置的localshare功能在浏览器中预览的时候不支持2x，所以用Gulp写了一个在浏览器中预览2x设计图的工具
+
 
 ## Install
 ### 依赖工具
@@ -29,6 +28,8 @@ new_project
 		|--images
 		|--resources
 		|--styles
+	|--preview
+	|--sketch-doc
 ```
 目录说明：
 #####/
@@ -36,15 +37,20 @@ new_project
 #####dist
 
 #####src
-sketch设计源文件放置于src目录下
+将所有的字体，图片，以及其它资源放在此目录下
+#####sketch-doc
+将sketch设计源文件放置在此目录下
+#####preview
+自动生成的预览文件在此目录下
 
-第二步运行install.sh，将为系统和项目安装以下依赖工具：
+###第二步运行install.sh
+将为系统和项目安装以下依赖工具：
 
 - gulp
 - gulp-sketch
 - gulp-server-livereload
-- gulp-less
-- gulp-shell
+- gulp-filelist
+
 
 
 ## Use
