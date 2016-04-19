@@ -3,14 +3,14 @@ var sketch   = require('gulp-sketch');
 var filelist = require('gulp-filelist');
 var server   = require('gulp-server-livereload');
 
-//监视sketch源文件的改动
+//监视sketch源文件的改动, 如遇变动则执行export_artboards任务
 gulp.task('watch-sketch', function() {
     gulp.watch('sketch-doc/*.sketch', ['export_artboards'])
 })
 
-//导出指定画板为@2x PNG文件
+//导出画板为@2x PNG文件
 gulp.task('export_artboards', function() {
-    return gulp.src('./sketch-doc/*.sketch') //监视src目录下所有sketch文件
+    return gulp.src('./sketch-doc/*.sketch') //监视所有sketch文件
         .pipe(sketch({
             export: 'artboards', //导出类型为artboard
             //items: 'home', //导出的artboard名称
@@ -20,7 +20,7 @@ gulp.task('export_artboards', function() {
         .pipe(filelist('list.json', {
             flatten: true
         }))
-        .pipe(gulp.dest('./preview/images/')); //将导出的png文件放在dist/images/目录下
+        .pipe(gulp.dest('./preview/images/')); //将导出的png文件放在preview/images/目录下
     //return gulp.src('./dist/images/*.png');
 
 });
