@@ -50,6 +50,7 @@ new_project
 - gulp-sketch
 - gulp-server-livereload
 - gulp-filelist
+- broswer-sync
 
 
 
