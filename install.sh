@@ -26,6 +26,5 @@ fi
 # 安装项目依赖包
 sudo npm install gulp-sketch --save-dev
 sudo npm install gulp-server-livereload --save-dev
-sudo npm install gulp-less --save-dev
-sudo npm install gulp-shell --save-dev
 sudo npm install gulp-filelist
+sudo npm install browser-sync --save-dev
