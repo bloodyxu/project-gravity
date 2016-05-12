@@ -1,10 +1,12 @@
 # PROJECT-GRAVITY
 ## Intro
 **可以帮助设计师提升网页设计的生产效率啊**
-
+但是首先要自己安装node.js环境和Gulp
 **可以做什么**
 - 由于Sketch内置的localshare功能在浏览器中预览的时候不支持2x，所以用Gulp写了一个在浏览器中预览2x设计图的工具
 
+**原理**
+其实就是自动输出了sketch的画板，然后将文件写入json之后调用broswer-sync刷新浏览器。
 
 ## Install
 ### 依赖工具
